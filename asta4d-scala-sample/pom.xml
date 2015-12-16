@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.astamuse</groupId>
+    <artifactId>asta4d-scala-parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>com.astamuse</groupId>
+  <artifactId>asta4d-scala-sample</artifactId>
+  <packaging>war</packaging>
+
+  <name>asta4d scala sample</name>
+  <description>asta4d scala sample</description>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+    <dependencies>
+      <dependency>
+        <groupId>com.astamuse</groupId>
+        <artifactId>asta4d-web</artifactId>
+        <version>1.1-b3</version>
+      </dependency>
+      <dependency>
+        <groupId>com.astamuse</groupId>
+        <artifactId>asta4d-scala</artifactId>
+        <version>0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>5.0.2.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        <scope>provided</scope>
+      </dependency>
+      
+    </dependencies>
+        <build>
+          <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.5</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.3</version>
+              <configuration>
+                  <source>1.8</source>
+                  <target>1.8</target>
+                  <compilerArgs>
+                      <arg>-parameters</arg>
+                  </compilerArgs>
+              </configuration>
+            </plugin>          
+            <plugin>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <version>9.2.8.v20150217</version>
+              <configuration>
+                    <webApp>
+                      <contextPath>/</contextPath>
+                    </webApp>
+                    <systemProperties>
+                    <systemProperty>
+                        <name>asta4d-scala-sample.debug</name>
+                        <value>true</value>
+                    </systemProperty>
+                    <systemProperty>
+                        <name>asta4d.sample.source_location</name>
+                        <value>${basedir}/src/main/java</value>
+                        </systemProperty>
+                    </systemProperties>
+              </configuration>
+            </plugin>
+          </plugins>
+        </build>
+</project>
