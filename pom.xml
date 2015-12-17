@@ -10,10 +10,10 @@
 
   <groupId>com.astamuse</groupId>
   <artifactId>asta4d-scala-parent</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.5</version>
   <packaging>pom</packaging>
 
-  <name>asta4d scala extension</name>
+  <name>asta4d scala parent pom</name>
 
   <modules>
     <module>asta4d-scala</module>
@@ -25,6 +25,7 @@
       <groupId>com.astamuse</groupId>
       <artifactId>asta4d-web</artifactId>
       <version>1.1-b3</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
         <groupId>org.scala-lang</groupId>
