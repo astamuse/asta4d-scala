@@ -2,6 +2,16 @@
 
 asta4d-scala is a project to afford more scala-like APIs for the original asta4d project.
 
+## usage
+
+```xml
+<dependency>
+  <groupId>com.astamuse</groupId>
+  <artifactId>asta4d-scala</artifactId>
+  <version>0.5</version>
+</dependency>
+```
+
 ## Rendering
 
 - simple rendering
