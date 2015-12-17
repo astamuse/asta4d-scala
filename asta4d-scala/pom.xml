@@ -4,27 +4,17 @@
   <parent>
     <groupId>com.astamuse</groupId>
     <artifactId>asta4d-scala-parent</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.5</version>
   </parent>
   
   <groupId>com.astamuse</groupId>
   <artifactId>asta4d-scala</artifactId>
   <packaging>jar</packaging>
 
-  <name>com.astamuse.asta4d-scala</name>
+  <name>asta4d-scala</name>
   <description>extension for using asta4d with scala</description>
   
   <dependencies>
-    <dependency>
-      <groupId>com.astamuse</groupId>
-      <artifactId>asta4d-web</artifactId>
-      <version>1.1-b3</version>
-    </dependency>
-    <dependency>
-        <groupId>org.scala-lang</groupId>
-        <artifactId>scala-library</artifactId>
-        <version>2.11.7</version>
-    </dependency>
     <dependency>
       <groupId>com.astamuse</groupId>
       <artifactId>asta4d-core</artifactId>
