@@ -12,13 +12,20 @@ import scala.collection.Iterable
 import scala.collection.JavaConversions
 import scala.collection.JavaConversions._
 import com.astamuse.asta4d.render.test.RendererTester
+import com.astamuse.asta4d.render.test.TestableElementWrapper
 
+/**
+ * This object is to supply implicit conventions for simplify rendering and rendering test.
+ */
 object R {
 
   implicit class RendererTesterExtension(tester: RendererTester){
     def getAsScalaList[A](selector: String)(implicit typ: Manifest[A]) : List[A] = {
       val list = tester.getAsList(selector, typ.runtimeClass)
       list.toList.asInstanceOf[List[A]]
+    }
+    def getAsRendererTesterScalaList(selector: String) : List[RendererTester] = {
+      tester.getAsScalaList[Renderer](selector).map { RendererTester.forRenderer(_) }
     }
   }
   
