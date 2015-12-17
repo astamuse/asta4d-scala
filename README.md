@@ -64,8 +64,9 @@ asta4d-scala is a project to afford more scala-like APIs for the original asta4d
     }
     ```
 
-## using RendererTester with scala way(by ScalaTest as sample)
+## Test
 
+- list assertion by ScalaTest
     ```scala
     import com.astamuse.asta4d.scala.R._
     val tester = RendererTester.forRenderer(render())
