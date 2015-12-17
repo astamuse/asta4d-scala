@@ -54,18 +54,12 @@ class RendererTest extends BaseTest{
     recursiveTester = RendererTester.forRenderer(tester.get("#someIdForRenderable").asInstanceOf[Renderable].render());
     Assert.assertEquals(recursiveTester.get("#id"), "xx");
 
-    // noop test
-    val noopTester = RendererTester.forRenderer(Renderer.create());
-    Assert.assertTrue(noopTester.noOp());
-
   }
   
   @Test
   def testGetList() {
     
     def render() = {
-      val s = ("#someIdForInt" -> List(123, 456, 789)).asRenderer()
-      
       "#someIdForInt" -> List(123, 456, 789) &
       "#someIdForLong" -> List(123L, 456L, 789L) &
       "#someIdForBool" -> List(true, true, false) &
@@ -84,8 +78,8 @@ class RendererTest extends BaseTest{
     Assert.assertEquals(tester.getAsList("#someIdForStr"), Arrays.asList("str1", "str2", "str3"));
 
     Assert.assertEquals(tester.getAsList("#someIdForElementSetter"),
-            Arrays.asList(new ChildReplacer(ElementUtil.parseAsSingle("<div>1</div>")),
-                    new ChildReplacer(ElementUtil.parseAsSingle("<div>2</div>"))));
+            Arrays.asList(new ChildReplacer("<div>1</div>".parseAsSingle()),
+                    new ChildReplacer("<div>2</div>".parseAsSingle())));
 
     Assert.assertEquals(tester.getAsList("#someIdForElement"),
               Arrays.asList(TestableElementWrapper.parse("<div>1</div>"), TestableElementWrapper.parse("<div>2</div>")));
@@ -118,7 +112,7 @@ class RendererTest extends BaseTest{
     
     //to test with scala way (by ScalaTest)
     {
-      val testerList = tester.getAsScalaList[Renderer]("#someIdForRenderer").map(RendererTester.forRenderer(_))
+      val testerList = tester.getAsRendererTesterScalaList("#someIdForRenderer")
       assert(List("id-123", "id-456", "id-789") === testerList.map(_.get("#id")))
       assert(List("otherId-123", "otherId-456", "otherId-789") === testerList.map(_.get("#otherId")))
     }
