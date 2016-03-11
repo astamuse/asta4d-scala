@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.astamuse</groupId>
     <artifactId>asta4d-scala-parent</artifactId>
-    <version>0.5</version>
+    <version>0.6-SNAPSHOT</version>
   </parent>
   
   <groupId>com.astamuse</groupId>
@@ -18,7 +18,7 @@
     <dependency>
       <groupId>com.astamuse</groupId>
       <artifactId>asta4d-core</artifactId>
-      <version>1.1-b3</version>
+      <version>1.2-SNAPSHOT</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>

@@ -6,7 +6,13 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/scala"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/scala"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <dependent-module archiveName="asta4d-scala-0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asta4d-scala/asta4d-scala">
+        <dependent-module archiveName="asta4d-web-1.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asta4d-web/asta4d-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="asta4d-core-1.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asta4d-core/asta4d-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="asta4d-scala-0.6-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asta4d-scala/asta4d-scala">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="asta4d-scala-sample"/>

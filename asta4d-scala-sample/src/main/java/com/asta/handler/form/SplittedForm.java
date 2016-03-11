@@ -110,7 +110,6 @@ public class SplittedForm implements MultiInputStepForm {
         this.cascadeJobForm = cascadeJobForm;
     }
 
-    @Override
     public Object getSubInputFormByStep(String step) {
         if (inputStep1.equalsIgnoreCase(step)) {
             return this.getPersonForm();
@@ -121,7 +120,6 @@ public class SplittedForm implements MultiInputStepForm {
         }
     }
 
-    @Override
     public void setSubInputFormForStep(String step, Object subForm) {
         if (inputStep1.equalsIgnoreCase(step)) {
             this.setPersonForm((PersonForm) subForm);
@@ -132,6 +130,11 @@ public class SplittedForm implements MultiInputStepForm {
         }
     }
 
+    @Override
+    public void mergeInputDataForConfirm(String step, Object inputForm) {
+        // TODO Auto-generated method stub
+
+    }
+
 }
 // @ShowCode:showSplittedFormEnd
-

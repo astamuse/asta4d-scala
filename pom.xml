@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.astamuse</groupId>
     <artifactId>asta4d</artifactId>
-    <version>1.1-b3</version>
+    <version>1.2-SNAPSHOT</version>
   </parent>
 
   <groupId>com.astamuse</groupId>
   <artifactId>asta4d-scala-parent</artifactId>
-  <version>0.5</version>
+  <version>0.6-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>asta4d scala parent pom</name>
@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.astamuse</groupId>
       <artifactId>asta4d-web</artifactId>
-      <version>1.1-b3</version>
+      <version>1.2-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
